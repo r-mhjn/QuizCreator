@@ -11,7 +11,8 @@ export default class QuizScreen extends React.Component {
     super(props);
 
     this.state = {
-      url: ""
+      url: "",
+      questions:[],
     };
   }
 
@@ -40,7 +41,14 @@ export default class QuizScreen extends React.Component {
     return (
       <div>
         <div>
-          {}
+          {this.state.questions.map((item, index) => {
+            return (
+              <div key={index} style={{ width: 300, height: 250 }}>
+                <p>{item.questionDescription}</p>
+                
+              </div>
+            );
+          })}
         </div>
       </div>
     );
