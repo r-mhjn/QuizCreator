@@ -1,26 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Login from "./Components/Login";
+import Navbar from "./Components/Navbar";
+import HomeScreen from "./screens/HomeScreen";
+import QuizScreen from "./screens/QuizScreen";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "./App.css";
+// <Route path="/login" exact component={Login} />
+// <Route path="/order" exact component={OrderScreen} />
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isloggedIn: false
+    };
+  }
+
+  componentDidMount() {
+    this._getTokenFromLocalStorage();
+  }
+
+  _getTokenFromLocalStorage = () => {
+    let token = localStorage.getItem("token");
+    console.log("My token" + token);
+    if (token != null) {
+      this.setState({ isloggedIn: true });
+    }
+    console.log(this.state.isloggedIn);
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <Navbar />
+        {this.state.isloggedIn === false ? (
+          <Login />
+        ) : (
+          <Router>
+            <Route path="/" exact component={HomeScreen} />
+            <Route path="/test" component={QuizScreen} />
+          </Router>
+        )}
+      </div>
+    );
+  }
 }
 
 export default App;

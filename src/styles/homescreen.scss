@@ -1,0 +1,23 @@
+.mainDiv {
+  display: flex;
+  flex-direction: row;
+}
+
+.addQuestionDiv {
+  display: flex;
+  border: 2px solid black;
+  flex-direction: column;
+  height: 300px;
+  flex: 2;
+  justify-content: center;
+  width: 50%;
+}
+.createQuizDiv {
+  display: flex;
+  border: 2px solid black;
+  flex-direction: column;
+  height: 300px;
+  justify-content: flex-start;
+  flex: 3;
+  // width: 50%;
+}

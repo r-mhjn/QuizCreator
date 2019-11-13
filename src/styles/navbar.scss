@@ -1,0 +1,75 @@
+.navBarDiv {
+  background-color: #0066a7;
+  width: 100%;
+  height: 60px;
+}
+
+.ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #2984bd;
+}
+
+.list-item {
+  float: left;
+}
+.list-anchor {
+  font-size: 20px;
+  display: block;
+  color: #9e9f98;
+  text-align: left;
+  padding: 22px 10px;
+  text-decoration: none;
+}
+
+.list-anchor:hover {
+  background-color: #2984bd;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menuListItem {
+  background-color: #202d32;
+  color: #9e9f98;
+  width: 400px;
+}
+
+.menuIcon {
+  width: 35px;
+  height: 5px;
+  background-color: #fff;
+  margin: 6px 0;
+}
+.menuButton {
+  position: relative;
+  // top: 2px;
+  color: #2984bd;
+  margin-left: 20px;
+  height: 40px;
+  width: 50px;
+}
+.navbarContent {
+  display: flex;
+  flex-direction: row;
+  // margin-top: 8px;
+}
+
+.navbarHeader {
+  color: "#fff";
+  margin-left: 12px;
+  font-size: 28px;
+  margin-top: 10px;
+}
+
+.logoutButton {
+  margin-left: 20vw;
+  margin-top: 10px;
+}
+
+.logoutButtonText {
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.5vw;
+}
